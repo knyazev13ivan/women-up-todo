@@ -1,0 +1,109 @@
+@import "../../../../variables.less";
+
+.task-card {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-top: 5px;
+  border-radius: 5px;
+  background-color: #f0f0f0;
+
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+
+  .mobile({
+    flex-direction: column;
+  });
+
+  &-control-buttons {
+    display: flex;
+    flex-direction: column;
+    margin-top: 5px;
+
+    .mobile({
+      flex-direction: row;
+      justify-content: center;
+      flex-wrap: wrap;
+    });
+
+    &__btn {
+      position: relative;
+      height: 35px;
+      min-width: 90px;
+      margin: 0px 10px 5px;
+      background-color: #f0f0f0;
+      font-size: 0.8em;
+    }
+  }
+}
+
+.task-card-body {
+  width: 70vw;
+  padding: 0px 15px;
+
+  .tablet({
+    width: 90vw;
+  });
+
+  .mobile({
+    width: 100vw;
+  });
+
+  &__title {
+    padding: 5px;
+    border-bottom: 1px solid #bbbbbb;
+    font-weight: bold;
+  }
+
+  &__description {
+    padding: 5px;
+    font-style: italic;
+  }
+
+  &__date {
+    padding: 5px;
+  }
+  
+  &__attachment {
+    padding: 10px 5px;
+    border-top: 1px solid #bbbbbb;
+
+    .download-button {
+      padding: 2px 4px;
+      margin: 0px 5px 5px;
+      border: 2px solid @download-color;
+      border-radius: 4px;
+      font-size: 1em;
+      font-weight: bold;
+      color: @download-color;
+      background-color: #f0f0f0;
+      cursor: pointer;
+
+      &:hover {
+        background-color: @button-hover-color;
+      }
+    }
+  }
+}
+
+.completed {
+  background-color: @complete-color;
+  opacity: 0.8;
+}
+
+.failed {
+  background-color: @failed-color;
+  opacity: 0.8;
+
+  .task-card-body {
+    &__title {
+      text-decoration: line-through;
+    }
+    &__date {
+      width: 140px;
+      font-weight: bold;
+      border-radius: 5px;
+      background-color: rgba(204, 54, 54, 0.764);
+    }
+  }
+}

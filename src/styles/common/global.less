@@ -1,0 +1,100 @@
+@import "../mixins/media.less";
+@import "../variables.less";
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+body {
+  min-width: 320px;
+  width: 100%;
+  font-family: "Century Gothic", sans-serif;
+  background-color: #ffffff;
+  color: @text-color;
+  background-color: @bg-color;
+
+  -ms-overflow-style: none;
+
+  &::-webkit-scrollbar {
+    width: 0;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+p {
+  margin: 0;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  padding: 4px 7px;
+  border: 2px solid @second-color;
+  border-radius: 4px;
+  font-size: 1em;
+  font-weight: bold;
+  color: @second-color;
+  background-color: transparent;
+  cursor: pointer;
+
+  &:disabled {
+    opacity: 0.6;
+  }
+
+  &:hover {
+    background-color: @button-hover-color;
+  }
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+
+  position: relative;
+
+  width: 100%;
+  padding: 7px 0px;
+
+  span {
+    padding: 5px 5px;
+  }
+
+  input,
+  textarea {
+    padding: 9px 12px;
+
+    border: 1px solid @input-bg-color;
+    border-bottom: 1px solid @second-color;
+    border-radius: 4px;
+
+    color: @text-color;
+    background-color: @input-bg-color;
+
+    font-size: 1em;
+
+    &:focus,
+    &:active,
+    &:hover {
+      border: 1px solid @second-color;
+
+      background-color: @button-hover-color;
+    }
+  }
+
+}

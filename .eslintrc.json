@@ -17,6 +17,7 @@
     }
   },
   "plugins": [
+    "prettier",
     "react",
     "@typescript-eslint"
   ],

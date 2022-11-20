@@ -1,9 +1,15 @@
 import React from "react";
+import Header from "./componets/Header";
+import TasksPage from "./componets/TasksPage";
 
 const App: React.FC = () => {
   return (
-    <main className="main">
-    </main>
+    <>
+      <Header />
+      <main className="main">
+        <TasksPage />
+      </main>
+    </>
   );
 };
 
